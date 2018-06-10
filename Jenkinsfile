@@ -17,7 +17,7 @@ pipeline {
         stage('Build Process Start'){
           steps{ 
               echo('Build Process Complete')
-              sh 'mvn clean package checkstyle:checkstype'
+              sh 'mvn clean package checkstyle:checkstyle'
             
             post {
                 success{               
