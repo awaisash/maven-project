@@ -18,7 +18,7 @@ pipeline {
           steps{ 
               echo('Build Process Complete')
               sh 'mvn clean package checkstyle:checkstyle'
-            
+          }
             post {
                 success{               
                 echo "Generate Checkstyle Report"
@@ -29,7 +29,7 @@ pipeline {
                 archiveArtifacts '**/*.war'
             }}
 
-          }
+          
         }
         stage('Deploy to staging'){
            steps{
