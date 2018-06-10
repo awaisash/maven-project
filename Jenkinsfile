@@ -36,7 +36,16 @@ pipeline {
                 echo "Build complete"
                 build 'Staging-Deployment'
            }
-        }   
+        }  
+         stage('Deploy to Prod.'){
+           steps{
+               timeout(time: 15, unit: 'SECONDS') {
+                input 'Are you Sure ??'
+}
+                    echo "Build complete"
+                build 'Prod-Deployment'
+           }
+        } 
          }
 
     
